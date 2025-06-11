@@ -19,7 +19,7 @@ public class BaseEntity {
     private String createByName;
 
     /**
-     * 创建时间
+     * 创建时间，时间戳，单位：毫秒
      */
     private Long createTime;
 
@@ -34,7 +34,7 @@ public class BaseEntity {
     private String updateByName;
 
     /**
-     * 更新时间
+     * 更新时间，时间戳，单位：毫秒
      */
     private Long updateTime;
 
