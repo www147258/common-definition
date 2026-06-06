@@ -12,23 +12,28 @@ public class CommonResponse<T> {
     private T data;
 
 
-    public static CommonResponse success() {
+    public static CommonResponse<Void> success() {
 
         return success(null);
     }
 
-    public static <T> CommonResponse success(T data) {
+    public static <T> CommonResponse<T> success(T data) {
         return buildCommonResponse(ResponseCodeAndMessageEnum.SUCCESS, data);
     }
 
-    public static CommonResponse fail(ExceptionResponse exceptionResponse) {
+    public static CommonResponse<Void> fail(ExceptionResponse exceptionResponse) {
 
         return buildCommonResponse(exceptionResponse, null);
     }
 
-    private static <T> CommonResponse buildCommonResponse(ExceptionResponse exceptionResponse, T data) {
+    public static <T> CommonResponse<T> fail(ExceptionResponse exceptionResponse, T data) {
 
-        CommonResponse response = new CommonResponse();
+        return buildCommonResponse(exceptionResponse, data);
+    }
+
+    private static <T> CommonResponse<T> buildCommonResponse(ExceptionResponse exceptionResponse, T data) {
+
+        CommonResponse<T> response = new CommonResponse<>();
         response.setCode(exceptionResponse.getCode());
         response.setMessage(exceptionResponse.getMessage());
         response.setData(data);

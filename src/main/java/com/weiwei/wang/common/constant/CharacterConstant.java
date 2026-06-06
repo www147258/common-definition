@@ -5,6 +5,9 @@ package com.weiwei.wang.common.constant;
  */
 public final class CharacterConstant {
 
+    private CharacterConstant() {
+    }
+
     /**
      * 逗号
      */

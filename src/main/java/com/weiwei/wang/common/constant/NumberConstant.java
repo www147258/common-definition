@@ -5,6 +5,9 @@ package com.weiwei.wang.common.constant;
  */
 public final class NumberConstant {
 
+    private NumberConstant() {
+    }
+
     public static final int ZERO_INT = 0;
     public static final int ONE_INT = 1;
     public static final int TWO_INT = 2;
@@ -28,5 +31,4 @@ public final class NumberConstant {
     public static final long EIGHT_LONG = 8L;
     public static final long NINE_LONG = 9L;
     public static final long TEN_LONG = 10L;
-
 }

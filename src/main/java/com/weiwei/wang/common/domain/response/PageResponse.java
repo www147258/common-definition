@@ -16,15 +16,15 @@ public class PageResponse<T> {
 
     private Integer pageSize;
 
-    public static PageResponse fromPageRequest(PageRequest request) {
-        PageResponse pageResponse = new PageResponse<>();
+    public static <T> PageResponse<T> fromPageRequest(PageRequest request) {
+        PageResponse<T> pageResponse = new PageResponse<>();
         pageResponse.setPageIndex(request.getPageIndex());
         pageResponse.setPageSize(request.getPageSize());
         return pageResponse;
     }
 
-    public static PageResponse fromPageRequestAndEmptyList(PageRequest request) {
-        PageResponse pageResponse = new PageResponse<>();
+    public static <T> PageResponse<T> fromPageRequestAndEmptyList(PageRequest request) {
+        PageResponse<T> pageResponse = new PageResponse<>();
         pageResponse.setPageIndex(request.getPageIndex());
         pageResponse.setPageSize(request.getPageSize());
         pageResponse.setRows(Collections.emptyList());

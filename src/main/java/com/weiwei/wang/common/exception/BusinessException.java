@@ -1,10 +1,19 @@
 package com.weiwei.wang.common.exception;
 
-public class BusinessException extends RuntimeException implements ExceptionResponse{
+public class BusinessException extends RuntimeException implements ExceptionResponse {
+
+    private static final long serialVersionUID = 1L;
 
     private Integer code;
 
     private String message;
+
+
+    public BusinessException(ExceptionResponse exceptionResponse) {
+        super(exceptionResponse.getMessage());
+        this.code = exceptionResponse.getCode();
+        this.message = exceptionResponse.getMessage();
+    }
 
 
     public BusinessException(Integer code, String message) {
@@ -14,7 +23,7 @@ public class BusinessException extends RuntimeException implements ExceptionResp
     }
 
     public BusinessException(Throwable cause, Integer code, String message) {
-        super(cause);
+        super(message, cause);
         this.code = code;
         this.message = message;
     }

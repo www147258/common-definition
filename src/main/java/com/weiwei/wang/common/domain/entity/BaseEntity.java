@@ -2,7 +2,6 @@ package com.weiwei.wang.common.domain.entity;
 
 public class BaseEntity {
 
-
     /**
      * 表主键
      */
@@ -14,7 +13,7 @@ public class BaseEntity {
     private Long createById;
 
     /**
-     * 创建人名字
+     * 创建人名称
      */
     private String createByName;
 
@@ -37,7 +36,6 @@ public class BaseEntity {
      * 更新时间，时间戳，单位：毫秒
      */
     private Long updateTime;
-
 
     public Long getUpdateTime() {
         return updateTime;
